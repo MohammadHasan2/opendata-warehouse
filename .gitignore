@@ -39,3 +39,5 @@ profiles.yml
 .user.yml
 
 *.duckdb
+# Allow the demo warehouse database
+!data/github_analytics.duckdb
