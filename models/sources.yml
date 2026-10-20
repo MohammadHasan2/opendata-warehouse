@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: github_data
+    schema: github_data
+    tables:
+      - name: repositories
+      - name: repository_snapshots

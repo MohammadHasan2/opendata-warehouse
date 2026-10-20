@@ -1,0 +1,9 @@
+dlt[duckdb]
+dbt-core
+dbt-duckdb
+fastapi
+uvicorn[standard]
+pydantic-settings
+httpx
+pytest
+python-dotenv

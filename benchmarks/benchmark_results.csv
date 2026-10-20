@@ -1,0 +1,3 @@
+query,runs,median_ms,min_ms,max_ms
+on_demand_aggregation,20,8.4123,7.2965,13.2035
+precomputed_mart,20,2.8292,2.1668,9.7973

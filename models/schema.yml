@@ -1,0 +1,42 @@
+version: 2
+
+models:
+  - name: dim_repositories
+    description: "One record per GitHub repository."
+    columns:
+      - name: repository_id
+        description: "GitHub's unique repository identifier."
+        data_tests:
+          - unique
+          - not_null
+
+      - name: full_name
+        data_tests:
+          - not_null
+
+  - name: fct_repository_snapshots
+    description: "Historical metrics for each repository snapshot."
+    columns:
+      - name: snapshot_date
+        data_tests:
+          - not_null
+
+      - name: repository_id
+        data_tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_repositories')
+                field: repository_id
+
+      - name: stars
+        data_tests:
+          - not_null
+
+  - name: mart_language_summary
+    description: "Latest repository metrics aggregated by language."
+    columns:
+      - name: language
+        data_tests:
+          - unique
+          - not_null

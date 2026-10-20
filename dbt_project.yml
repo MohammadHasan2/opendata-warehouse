@@ -1,0 +1,15 @@
+name: opendata_warehouse
+version: "1.0.0"
+config-version: 2
+
+profile: opendata_warehouse
+
+model-paths: ["models"]
+clean-targets: ["target", "dbt_packages"]
+
+models:
+  opendata_warehouse:
+    staging:
+      +materialized: view
+    marts:
+      +materialized: table

@@ -1,0 +1,8 @@
+﻿services:
+  - type: web
+    name: opendata-warehouse-api
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements-api.txt
+    startCommand: uvicorn app.main:app --app-dir backend --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
